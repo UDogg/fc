@@ -1,5 +1,8 @@
 import tkinter as tk
 from tkinter import font as tkFont
+import tkinter.simpledialog
+import tkinter.messagebox
+
 import json
 from pathlib import Path
 
@@ -137,6 +140,21 @@ def delete_card():
         save_flashcards(flashcards)
         next_card()
 
+def skip_to_question():
+    global current_card, flashcards
+    if not flashcards:
+        tk.messagebox.showinfo("Error", "No flashcards available.")
+        return
+
+    # Ask for the question number
+    question_num = tk.simpledialog.askinteger("Skip to Question", "Enter question number:",
+                                              minvalue=1, maxvalue=len(flashcards))
+    
+    if question_num is not None:
+        current_card = question_num - 1  # Adjust for zero-based indexing
+        flip_card()
+
+
 # GUI setup
 flashcards = load_flashcards()
 current_card = 0
@@ -163,6 +181,9 @@ update_button.pack(side=tk.LEFT, padx=20, pady=20)
 
 status_label = tk.Label(app, bg="#6A5ACD", fg="#FFFFFF", font=tk_poppins_button_font)
 status_label.pack(side=tk.BOTTOM, fill="x")
+
+skip_button = tk.Button(app, text="Skip to Question", command=skip_to_question, font=tk_poppins_button_font, fg="#000000")
+skip_button.place(relx=0.5, y=app.winfo_reqheight() - 100, anchor="s")
 
 # Now it's safe to load flashcards and update the GUI based on them
 flashcards = load_flashcards()
