@@ -1,0 +1,31 @@
+[
+    {
+        "id": 1,
+        "question": "What is the capital of France?",
+        "answer": "Paris"
+    },
+    {
+        "id": 2,
+        "question": "Who wrote 'To Kill a Mockingbird'?",
+        "answer": "Harper Lee"
+    },
+    {
+        "id": 3,
+        "question": "What is the chemical symbol for gold?",
+        "answer": "Au"
+    },
+    {
+        "id": 4,
+        "question": "What planet is known as the Red Planet?",
+        "answer": "Mars"
+    },
+    {
+        "id": 5,
+        "question": "In computing, what does CPU stand for?",
+        "answer": "Central Processing Unit"
+    },
+    {
+        "question": "Who are you?",
+        "answer": "Donotaskmynamedonut."
+    }
+]
