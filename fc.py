@@ -38,6 +38,11 @@ app.resizable(False, False)
 # Now create the fonts, after the root window
 tk_poppins_qa_font, tk_poppins_button_font = create_fonts()
 
+top_frame = tk.Frame(app, bg="#000000")
+top_frame.pack(side=tk.TOP, fill="x")
+status_label = tk.Label(top_frame, bg="#6A5ACD", fg="#FFFFFF", font=tk_poppins_button_font)
+status_label.pack(side=tk.RIGHT, padx=10)
+
 # Update the status bubble function
 def update_status():
     # Make sure this function can safely handle being called
@@ -166,21 +171,21 @@ flip_card()
 
 app.bind("<Button-1>", flip_card)
 
-# Button setup, with black font color as requested
-add_button = tk.Button(app, text="Add Flashcard", command=add_card, font=tk_poppins_button_font, fg="#000000")
-add_button.pack(side=tk.LEFT, padx=20, pady=20)
+button_frame = tk.Frame(app, bg="#000000")  # Create a frame to hold the buttons
+button_frame.pack(side=tk.BOTTOM, fill="x", pady=20)  # Pack the frame at the bottom of the window
 
-delete_button = tk.Button(app, text="Delete Flashcard", command=delete_card, font=tk_poppins_button_font, fg="#000000")
-delete_button.pack(side=tk.RIGHT, padx=20, pady=20)
+# Place buttons inside the frame
+add_button = tk.Button(button_frame, text="Add Flashcard", command=add_card, font=tk_poppins_button_font, fg="#000000")
+add_button.pack(side=tk.LEFT, padx=10)
 
-next_button = tk.Button(app, text="Next", command=next_card, font=tk_poppins_button_font, fg="#000000")
-next_button.pack(side=tk.BOTTOM, pady=20)
+update_button = tk.Button(button_frame, text="Update Flashcard", command=update_card, font=tk_poppins_button_font, fg="#000000")
+update_button.pack(side=tk.LEFT, padx=100)
 
-update_button = tk.Button(app, text="Update Flashcard", command=update_card, font=tk_poppins_button_font, fg="#000000")
-update_button.pack(side=tk.LEFT, padx=20, pady=20)
+next_button = tk.Button(button_frame, text="Next Question", command=next_card, font=tk_poppins_button_font, fg="#000000")
+next_button.pack(side=tk.LEFT, padx=10)
 
-status_label = tk.Label(app, bg="#6A5ACD", fg="#FFFFFF", font=tk_poppins_button_font)
-status_label.pack(side=tk.BOTTOM, fill="x")
+delete_button = tk.Button(button_frame, text="Delete Flashcard", command=delete_card, font=tk_poppins_button_font, fg="#000000")
+delete_button.pack(side=tk.RIGHT, padx=10)
 
 skip_button = tk.Button(app, text="Skip to Question", command=skip_to_question, font=tk_poppins_button_font, fg="#000000")
 skip_button.place(relx=0.5, y=app.winfo_reqheight() - 100, anchor="s")
