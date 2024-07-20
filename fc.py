@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import font as tkFont
-import tkinter.simpledialog
+import tkintqer.simpledialog
 import tkinter.messagebox
 
 import json

@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "question": "What is the capital of France?",
-        "answer": "Paris"
+        "question": "What are the two properties that support greedy algorithms?",
+        "answer": "Greedy Choice property and Optimal Substructure"
     },
     {
         "id": 2,
@@ -27,5 +27,13 @@
     {
         "question": "Who are you?",
         "answer": "Donotaskmynamedonut."
+    },
+    {
+        "question": "How much does Penn State charge in a year?",
+        "answer": "$50000 = Rs4166050"
+    },
+    {
+        "question": "How much do Indian Colleges charge in a year",
+        "answer": "Rs1500000= $18000"
     }
 ]
