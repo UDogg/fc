@@ -14,8 +14,10 @@ This README is a guide for absolute beginners regarding how to use this app.
 2. Colors and fonts can be changed for more personalization
 3. Please do not delete the JSON as it acts like a local database for the flashcards as we have not connected it to any cloud database or more advanced structures.
 4. This app has full CRUD functionality and is a very basic minimalist local flashcard app.
-5. Run ```python3 fc.py``` in the terminal at the level containing fc.py
+5. Install python-tk for macos ```brew install python-tk```
+5. Run ```python3 fc.py``` in the terminal at the level containing fc.py 
+
    
 ### If using docker
 1. ```docker build -t fc .```
-2. ```docker run -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix fc```
+2. Whatever command you use to run docker containers.

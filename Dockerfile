@@ -1,8 +1,11 @@
-# Use the official Python image as the base
+# Use the official Python 3.10 image as the base
 FROM python:3.10-slim
 
 # Set the working directory to /app
 WORKDIR /app
+
+# Install tkinter system package
+RUN apt update && apt install -y python3-tk
 
 # Copy requirements file
 COPY requirements.txt .

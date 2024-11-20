@@ -1,5 +1,1 @@
-tkinter
-tkinter.simpledialog
-tkinter.messagebox
-json
 pathlib
